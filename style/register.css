@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(243, 243, 244);
+}
+main {
+    width: 20%;
+    margin-left: 37%;
+    
+}
+header {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 20px;
+}
+form {
+    width: 100%;
+    border: 2px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+.header_Register,.header_Login {
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 10px 20px 10px;
+}
+.register_Group,.login_Group {
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    margin-top: 10px;
+    height: 30px;
+    border-radius: 5px;
+}
+label {
+    font-style: italic;
+    font-size: 20px;
+}
+.submit_Register {
+    width: 30%;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 35%;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.submit_Login {
+    width: 40%;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 31%;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.check_Login {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+    
+}

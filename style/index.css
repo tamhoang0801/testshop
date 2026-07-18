@@ -1,0 +1,46 @@
+main {
+    position: relative;
+    width: 100%;
+}
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+td, tr, th {
+    padding: 10px;
+    width: 15%;
+    text-align: center;
+    border: 1px solid black;
+}
+.buy_Button {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+}
+.title_Images {
+    position: absolute;
+    top: 63%;
+    z-index: 1;
+    color : white;
+    font-size: 40px;
+    font-weight: bold;
+    left: 10%;
+    animation: steps 5s linear infinite forwards;
+}
+@keyframes steps {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    50%{
+        opacity:  0.8;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+}
