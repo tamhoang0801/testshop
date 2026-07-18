@@ -9,6 +9,7 @@ class Cart {
         else {
             $this->item[$id] = new cartItem($id, $name, $price, $quantity);
         }
+        
     }
     public function total():float {
         $total = 0.0;

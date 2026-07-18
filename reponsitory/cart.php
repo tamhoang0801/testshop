@@ -17,11 +17,8 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
     }
     header("location: cart.php");
     exit;
-
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
         </tbody>
     </table>
     <div>Total:<?= $cart->total()?></div>
-    <form action="/model/order.php" method="post">
+    <form action="/model/order.php" method="POST">
         <button type="submit">confirm</button>
     </form>
     <a href="/index.php">continue cart</a>

@@ -10,6 +10,7 @@ class cartItem {
         $this->price = $price ?? 0.0;
         $this->quantity = $quantity ?? 1;
     }
+    
     public function increase(int $quantity):void {
         $this->quantity += $quantity;
     }

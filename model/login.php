@@ -5,6 +5,8 @@ if(session_status()=== PHP_SESSION_NONE){
     session_start();
 }
 
+
+
 function selectInforUser(){
     global $conn;
     $sql = "SELECT * FROM userr";

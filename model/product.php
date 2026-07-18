@@ -1,5 +1,6 @@
 <?php
 class product {
+    
     private int $id;
     private string $name;
     private float $price;

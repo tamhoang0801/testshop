@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../config/connect.php";
 function register(){
     global $conn;
+    
     if(isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST"){
         $username = $_POST["username"] ?? "";
         $password = $_POST["password"] ?? "";

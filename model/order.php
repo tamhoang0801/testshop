@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . "/../config/connect.php";
 require_once __DIR__ . "/Cart.php";
 require_once __DIR__ . "/CartItem.php";
@@ -7,11 +6,13 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+
 // Kiểm tra đăng nhập
 if (!isset($_SESSION["user"])) {
     header("Location: /form.html/login.html");
     exit;
 }
+
 
 // Kiểm tra giỏ hàng
 if (!isset($_SESSION["cart"])) {
@@ -68,7 +69,8 @@ try {
     header("Location: /index.php");
     exit;
 
-} catch (PDOException $e) {
+} 
+catch (PDOException $e) {
 
     $conn->rollBack();
     echo "Lỗi: " . $e->getMessage();
