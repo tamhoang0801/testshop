@@ -1,3 +1,14 @@
+header {
+    height: 60px;
+    width: 100%; 
+    background-color: black ;
+    display: flex;
+    position: relative;
+    color: white;
+    justify-content: space-around;
+}
+
+
 main {
     position: relative;
     width: 100%;
