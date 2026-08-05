@@ -22,74 +22,82 @@ if (!isset($_SESSION["user"])) {
             <div class="navbar_item">Order</div>
             <div class="navbar_item">Contact</div>
         </div>
-        <h2> Welcome to my shop</h2>
         <div class="navbar_Search">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
     </header>
     <main>
+        <div class="main_Item">
+            <div class="home_Item active">
+                <img src="images\5dd17243-cb36-4ea5-a698-8b399a4ff700.png" alt="">
+                <div class="description">
+                    <h3>Chất Lượng Cao</h3>
+                    
+                </div>
+            </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody class="content">
-            </tbody>
-        </table>
-    </main>
-    <script>
-        // API lấy danh sách nhiều sản phẩm
-        const apiDatabase = "/reponsitory/database.php";
-        // Lấy tbody
-        const content = document.querySelector(".content");
-        fetch(apiDatabase)
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error(
-                        "HTTP Error: " + res.status
-                    );
-                }
-                return res.json();
-            })
-            .then(dataBase => {
-                console.log("Dữ liệu API:", dataBase);
-                // data là một mảng sản phẩm
-                content.innerHTML = dataBase.data.map(product => {
-                    return `
-                        <tr>
-                            <td>${product.id}</td>
-                            <td>${product.name}</td>
-                            <td>${product.price} USD</td>
-                            <td>
-                                <form action="/reponsitory/cart.php" method="POST" >
-                                    <input type="hidden" name="id" value="${product.id}">
-                                    <input type="hidden" name="name" value="${product.name}">
-                                    <input type="hidden" name="price" value="${product.price}">
-                                    <button type="submit" class="buy_Button"> Add to cart</button>
-                                </form>
-                            </td>
-                        </tr>
-                    `;
-                }).join("");
-            })
-            .catch(error => {
-                console.error(
-                    "Lỗi gọi API:",
-                    error
-                );
-                content.innerHTML = `
+            <div class="home_Item">
+                <img src="images/a19b431b-bf5d-4756-b21a-3f84a2b3a50e.png" alt="">
+                <div class="description">
+                    <h3>Giao Hàng Nhanh</h3>
+    
+                </div>
+            </div>
+
+            <div class="home_Item">
+                <img src="images/hỗ trợ khách hàng.png" alt="">
+                <div class="description">
+                    <h3>Hỗ Trợ 24/7</h3>
+                </div>
+            </div>
+
+            <div class="home_Item">
+                <img src="images/dae12927-541d-4840-9811-1fb895664b73.png" alt="">
+                <div class="description">
+                    <h3>Thanh Toán An Toàn</h3>
+                </div>
+            </div>
+        </div>
+        <div class="main_Item intro_Content">
+            <h1>INTRODUCTION</h1>
+            <section class="intro">
+
+                ```
+                <h2>Chúng Tôi Không Chỉ Bán Hàng – Chúng Tôi Bán Niềm Tin</h2>
+
+                <p>
+                    Trong thế giới mà từng phút giây đều tạo nên giá trị, một đơn hàng được giao đúng thời điểm không chỉ là sự hoàn thành nhiệm vụ mà còn là lời khẳng định về uy tín và trách nhiệm. Chúng tôi xây dựng hệ thống vận chuyển hiện đại với mục tiêu mang đến những giải pháp nhanh chóng, an toàn và chính xác cho mọi khách hàng. Mỗi kiện hàng đều được theo dõi xuyên suốt hành trình, kiểm soát nghiêm ngặt trong từng khâu để đảm bảo đến nơi nguyên vẹn và đúng hẹn.
+                </p>
+
+                <p>
+                    Với đội ngũ chuyên nghiệp, quy trình vận hành tối ưu và dịch vụ hỗ trợ khách hàng 24/7, chúng tôi luôn sẵn sàng đồng hành cùng bạn trong mọi nhu cầu vận chuyển. Dù là cá nhân hay doanh nghiệp, chúng tôi tin rằng mỗi đơn hàng đều chứa đựng những giá trị quan trọng cần được bảo vệ và trao gửi đúng lúc. Lựa chọn chúng tôi không chỉ là lựa chọn một đơn vị giao nhận, mà còn là lựa chọn một đối tác đáng tin cậy luôn đặt chất lượng dịch vụ và sự hài lòng của khách hàng lên hàng đầu.
+                </p>
+                ```
+
+            </section>
+
+
+        </div>
+        <div class="main_Item">
+            <table class="cart_Table">
+                <thead>
                     <tr>
-                        <td colspan="4">
-                            Không thể tải danh sách sản phẩm
-                        </td>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Action</th>
                     </tr>
-                `;
-            });
-    </script>
+                </thead>
+                <tbody class="content">
+                </tbody>
+            </table>
+        </div>
+        <div class="main_Item contact_Content">
+            <h1>CONTACT</h1>
+        </div>
+
+        
+    </main>
+    <script src="/script/index.js"></script>
 </body>
 </html>
