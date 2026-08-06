@@ -17,7 +17,7 @@ if (!isset($_SESSION["user"])) {
 <body>
     <header>
         <div class="navbar">
-            <div class="navbar_item">Home</div>
+            <div class="navbar_item active">Home</div>
             <div class="navbar_item">Intro</div>
             <div class="navbar_item">Order</div>
             <div class="navbar_item">Contact</div>
@@ -78,19 +78,8 @@ if (!isset($_SESSION["user"])) {
 
 
         </div>
-        <div class="main_Item">
-            <table class="cart_Table">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody class="content">
-                </tbody>
-            </table>
+        <div class="main_Item cart_Content">
+            <div class="cart_Table"></div>
         </div>
         <div class="main_Item contact_Content">
             <h1>CONTACT</h1>

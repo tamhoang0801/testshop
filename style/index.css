@@ -21,6 +21,9 @@ header {
     cursor: pointer;
     padding: 5px 10px;
 }
+.navbar_item.active {
+    background-color: black;
+}
 .navbar_item:hover {
     background-color: black;
 
@@ -32,12 +35,16 @@ header {
 }
 
 main {
+    color: white;
+    background-color: rgb(66, 66, 66);
     position: relative;
     width: 100%;
+    
 }
 
 
 .main_Item {
+    
     position: relative;
     width: 100%;
     height: 100vh;
@@ -45,7 +52,11 @@ main {
 .home_Item {
     position: absolute;
     display: none;
+    
 
+}
+.intro_Content, .contact_Content, .cart_Content {
+    padding-top: 50px;
 }
 .home_Item.active {
     display: block;
@@ -70,24 +81,44 @@ main {
 }
 .intro {
     border: 1px solid black;
-    box-shadow: 3px 2px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 3px 2px 8px 8px rgba(0,0,0,0.5);
     width: 45%;
     padding: 35px;
     margin-left: 25%;
     font-size: 20px;
 }
-table {
-    text-align: center;
-    width: 50%;
-    margin-left: 25%;
-    border-collapse: collapse;
+.cart_Table {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
-td, tr, th {
-    padding: 10px;
-    width: 15%;
+.cart_Item {
     text-align: center;
+    margin: 10px;
+    padding: 20px 0;
+    width: 20%;
     border: 1px solid black;
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
+.cart_Item:hover {
+    animation: click 5s infinite linear forwards ;
+}
+
+@keyframes click {
+    from {
+        transform: translateY(5px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.cart_Table img {
+    width: 60%;
+    height: 25vh;
+    
+}
+
 .buy_Button {
     cursor: pointer;
     font-size: 20px;

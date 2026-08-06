@@ -2,7 +2,7 @@
 function renderCart() {
     const apiDatabase = "/reponsitory/database.php";
 // Lấy tbody
-    const content = document.querySelector(".content");
+    const content = document.querySelector(".cart_Table");
     fetch(apiDatabase)
         .then(res => {
             if (!res.ok) {
@@ -17,19 +17,21 @@ function renderCart() {
             // data là một mảng sản phẩm
             content.innerHTML = dataBase.data.map(product => {
                 return `
-                    <tr>
-                        <td>${product.id}</td>
-                        <td>${product.name}</td>
-                        <td>${product.price} USD</td>
-                        <td>
-                            <form action="/reponsitory/cart.php" method="POST" >
-                                <input type="hidden" name="id" value="${product.id}">
-                                <input type="hidden" name="name" value="${product.name}">
-                                <input type="hidden" name="price" value="${product.price}">
-                                <button type="submit" class="buy_Button"> Add to cart</button>
-                            </form>
-                        </td>
-                    </tr>
+                        <div class="cart_Item">
+                
+                            <div>Name: ${product.name}</div>
+                            <div>Price: ${product.price} USD</div>
+                            <img src="${product.images}" alt="">
+                            <div>
+                                <form action="/reponsitory/cart.php" method="POST" >
+                                    <input type="hidden" name="id" value="${product.id}">
+                                    <input type="hidden" name="name" value="${product.name}">
+                                    <input type="hidden" name="price" value="${product.price}">
+                                    <button type="submit" class="buy_Button"> Add to cart</button>
+                                </form>
+                            </div>
+                        </div>
+                    
                 `;
             }).join("");
         })
@@ -40,9 +42,9 @@ function renderCart() {
             );
             content.innerHTML = `
                 <tr>
-                    <td colspan="4">
+                    <div colspan="4">
                         Không thể tải danh sách sản phẩm
-                    </td>
+                    </div>
                 </tr>
             `;
         });
@@ -60,8 +62,31 @@ function renderIntro() {
     }, 3000); // Thay đổi thời gian chuyển đổi (ms)
 
 }
+function viewCreen() {
+    const navbarItem = document.querySelectorAll(".navbar_item");
+    const mainItems = document.querySelectorAll(".main_Item");
+    navbarItem.forEach((item,index)=>{
+        let mainItem = mainItems[index];
+        item.addEventListener("click",()=>{
+            const active = document.querySelector(".navbar_item.active");
+            if(active) {
+                active.classList.remove("active");
+            }
+            item.classList.add("active");
+
+            mainItem.scrollIntoView({
+                block: "start",
+                behavior: 'smooth',
+                top: -100
+
+            });
+        })
+
+    })
+}
 function start() {
     renderIntro();
     renderCart();
+    viewCreen();
 }
 start();

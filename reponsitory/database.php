@@ -18,14 +18,16 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $product = new Product(
         $row["id"],
         $row["name"],
-        $row["price"]
+        $row["price"],
+        $row["images"]
     );
 
     // Chuyển object Product thành dữ liệu JSON
     $products[] = [
         "id" => $product->getId(),
         "name" => $product->getName(),
-        "price" => $product->getPrice()
+        "price" => $product->getPrice(),
+        "images" => $product->getImages()
     ];
 }
 
