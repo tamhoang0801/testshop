@@ -83,6 +83,21 @@ if (!isset($_SESSION["user"])) {
         </div>
         <div class="main_Item contact_Content">
             <h1>CONTACT</h1>
+            <div class="contact_Items">
+                <div class="contact_Item left_Content">
+                    <div class="left_Content">Name:myshop.com</div>
+                    <div class="left_Content">Phone:0884830342</div>
+                    <div class="left_Content">Address:Ho Chi Minh city</div>
+                </div>
+                <div class="contact_Item right_Content">
+                <form action="" method="get">
+                    <input type="text" placeholder="email">
+                    <input type="password" placeholder="password">
+                    <input type="text" placeholder="message">
+                    <button type="submit">Send</button>
+                </form>
+                </div>
+            </div>
         </div>
 
         

@@ -19,12 +19,13 @@ function renderCart() {
                 return `
                         <div class="cart_Item">
                 
-                            <div>Name: ${product.name}</div>
-                            <div>Price: ${product.price} USD</div>
+                            
                             <img src="${product.images}" alt="">
+                            <div class="name_Product">Name: ${product.name}</div>
+                            <div class="price_Product">Price: ${product.price} USD</div>
                             <div>
                                 <form action="/reponsitory/cart.php" method="POST" >
-                                    <input type="hidden" name="id" value="${product.id}">
+                                    <input type="hidden" name="id" value="${product.id}" >
                                     <input type="hidden" name="name" value="${product.name}">
                                     <input type="hidden" name="price" value="${product.price}">
                                     <button type="submit" class="buy_Button"> Add to cart</button>
@@ -82,6 +83,12 @@ function viewCreen() {
             });
         })
 
+    })
+}
+function add() {
+    const cartItems = document.querySelectorAll(".cart_Item");
+    cartItems.forEach((value,index)=>{
+        value.addEventListener("click", )
     })
 }
 function start() {

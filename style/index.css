@@ -94,9 +94,11 @@ main {
 }
 .cart_Item {
     text-align: center;
+    border-radius: 30px;
+    background-color: rgb(132, 133, 134);
     margin: 10px;
-    padding: 20px 0;
-    width: 20%;
+    padding: 10px;
+    width: 15%;
     border: 1px solid black;
     box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.5);
     cursor: pointer;
@@ -113,10 +115,11 @@ main {
         transform: translateY(0);
     }
 }
+
 .cart_Table img {
-    width: 60%;
+    width: 80%;
     height: 25vh;
-    
+    border-radius: 20px;
 }
 
 .buy_Button {
@@ -126,6 +129,11 @@ main {
     border-radius: 10px;
     color: white;
     background-color: black;
+}
+
+.buy_Button:hover {
+    background-color: aliceblue;
+    color: black;
 }
 .title_Images {
     position: absolute;
@@ -153,4 +161,10 @@ main {
 }
 .contact_Content {
     text-align: center;
+}
+.contact_Items {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
