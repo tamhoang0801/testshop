@@ -86,14 +86,25 @@ function viewCreen() {
     })
 }
 function add() {
-    const cartItems = document.querySelectorAll(".cart_Item");
-    cartItems.forEach((value,index)=>{
-        value.addEventListener("click", )
-    })
+    const intro = document.querySelector(".intro");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                intro.classList.add("active");
+            }
+            else {
+                intro.classList.remove("active")
+            }
+        });
+    });
+
+    observer.observe(intro);
 }
 function start() {
     renderIntro();
     renderCart();
-    viewCreen();
+    viewCreen(); 
+    add();
 }
 start();

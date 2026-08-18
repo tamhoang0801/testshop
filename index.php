@@ -85,17 +85,46 @@ if (!isset($_SESSION["user"])) {
             <h1>CONTACT</h1>
             <div class="contact_Items">
                 <div class="contact_Item left_Content">
-                    <div class="left_Content">Name:myshop.com</div>
-                    <div class="left_Content">Phone:0884830342</div>
-                    <div class="left_Content">Address:Ho Chi Minh city</div>
+                    <div class="left_Item">
+                        <i class="fa-solid fa-user"></i>
+                        <div>Name:myshop.com</div>
+                    </div>
+                    <div class="left_Item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>Phone:0884830342</div>
+                    </div>
+                    <div class="left_Item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>Address:Ho Chi Minh city</div>
+                    </div>
                 </div>
                 <div class="contact_Item right_Content">
-                <form action="" method="get">
-                    <input type="text" placeholder="email">
-                    <input type="password" placeholder="password">
-                    <input type="text" placeholder="message">
-                    <button type="submit">Send</button>
-                </form>
+                    <form action="" method="get" class="form_Message">
+                        <div class="message_Item infor_User">
+                            <input type="text" placeholder="email">
+                            <input type="password" placeholder="password">
+                        </div>
+                        <div class="message_Item">
+                            <input type="text" placeholder="message">
+                        </div>
+                        <div class="message_Item">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="social_Media">
+                <div class="logo">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-discord"></i>
+                </div>
+                <div class="author">
+                    Powered of <a>Suber</a>
                 </div>
             </div>
         </div>

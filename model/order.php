@@ -44,8 +44,8 @@ try {
     $orderId = $conn->lastInsertId();
 
     // Thêm chi tiết đơn hàng
-    $sql = "INSERT INTO orderdetails(orderId, productId, quantity, total)
-            VALUES(:orderId, :productId, :quantity, :total)";
+    $sql = "INSERT INTO orderdetails(orderDetailId, productId, quantity, total)
+            VALUES(:orderDetailId, :productId, :quantity, :total)";
 
     $stmt = $conn->prepare($sql);
 
@@ -54,7 +54,7 @@ try {
         $total = $item->getPrice() * $item->getQuantity();
 
         $stmt->execute([
-            ":orderId"   => $orderId,
+            ":orderDetailId"   => $orderId,
             ":productId" => $item->getId(),
             ":quantity"  => $item->getQuantity(),
             ":total"     => $total

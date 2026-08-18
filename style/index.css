@@ -86,7 +86,19 @@ main {
     padding: 35px;
     margin-left: 25%;
     font-size: 20px;
+    
 }
+.intro.active {
+    animation: moving 1.5s linear 1 forwards ;
+}
+@keyframes moving {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: 25%;
+    }
+} 
 .cart_Table {
     display: flex;
     width: 100%;
@@ -160,11 +172,66 @@ main {
     }
 }
 .contact_Content {
+    width: 100%;
+}
+.contact_Content h1 {
     text-align: center;
 }
 .contact_Items {
     width: 80%;
-    text-align: center;
     display: flex;
     justify-content: space-around;
+    margin-left: 10%;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    padding: 50px 0;
+}
+.form_Message {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+.message_Item {
+    flex-basis: 1;
+}
+.message_Item input {
+    width: 93%;
+    border-radius: 10px;
+    margin: 0 10px 10px 10px;
+    height: 25px;
+    border: solid black 2px;
+}
+.infor_User {
+    display: flex;
+}
+.left_Item {
+    display: flex;
+    font-size: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.left_Item .fa-solid{
+    padding-right: 10px;
+}
+.message_Item:last-child {
+    text-align: right;
+}
+.message_Item button {
+    font-size: 15px;
+    border: solid black 2px;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.message_Item button:hover {
+    background-color: black;
+    color: white;
+}
+.social_Media {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 200px;
+
 }
