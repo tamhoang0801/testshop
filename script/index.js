@@ -1,5 +1,10 @@
 
 function renderCart() {
+    const description = ["Lamborghini Aventador sở hữu thiết kế thể thao mạnh mẽ, sang trọng và đầy cá tính. Động cơ hiệu suất cao mang đến khả năng tăng tốc ấn tượng cùng trải nghiệm lái phấn khích. Nội thất hiện đại, cao cấp, phù hợp với những người yêu thích tốc độ, sự khác biệt và muốn thể hiện phong cách riêng.",
+                        "Mercedes Benz nổi bật với thiết kế sang trọng, tinh tế và hiện đại. Động cơ mạnh mẽ mang đến khả năng vận hành ổn định, êm ái. Nội thất rộng rãi, tiện nghi cùng nhiều công nghệ tiên tiến tạo trải nghiệm thoải mái. Đây là lựa chọn phù hợp cho những người yêu thích sự đẳng cấp.",
+                        "Pexels 1000 là mẫu mô tô thể thao với thiết kế mạnh mẽ, cá tính và năng động. Động cơ mạnh mẽ mang lại khả năng tăng tốc nhanh cùng cảm giác lái đầy phấn khích. Kiểu dáng khí động học nổi bật, phù hợp với những người yêu thích tốc độ và phong cách thể thao.",
+                        "iPhone 17 Pro Max sở hữu thiết kế cao cấp, màn hình sắc nét và hiệu năng mạnh mẽ. Hệ thống camera chất lượng cao giúp chụp ảnh, quay video ấn tượng. Thiết bị mang đến trải nghiệm sử dụng mượt mà, hiện đại và tiện lợi, phù hợp với những người yêu thích công nghệ và thiết kế sang trọng."
+                            ];
     const apiDatabase = "/reponsitory/database.php";
 // Lấy tbody
     const content = document.querySelector(".cart_Table");
@@ -15,15 +20,18 @@ function renderCart() {
         .then(dataBase => {
             console.log("Dữ liệu API:", dataBase);
             // data là một mảng sản phẩm
-            content.innerHTML = dataBase.data.map(product => {
+            content.innerHTML = dataBase.data.map((product,index) => {
                 return `
                         <div class="cart_Item">
                 
                             
-                            <img src="${product.images}" alt="">
-                            <div class="name_Product">Name: ${product.name}</div>
-                            <div class="price_Product">Price: ${product.price} USD</div>
-                            <div>
+                            <div class="images_Product">
+                                <img src="${product.images}" alt="">
+                            </div>
+                            <div class="content_Product">
+                                <div class="name_Product">Name: ${product.name}</div>
+                                <div class="des_Product">Description:  ${description[index]}</div>
+                                <div class="price_Product">Price: ${product.price} USD</div>
                                 <form action="/reponsitory/cart.php" method="POST" >
                                     <input type="hidden" name="id" value="${product.id}" >
                                     <input type="hidden" name="name" value="${product.name}">
@@ -31,6 +39,9 @@ function renderCart() {
                                     <button type="submit" class="buy_Button"> Add to cart</button>
                                 </form>
                             </div>
+                            
+                                
+                            
                         </div>
                     
                 `;
@@ -51,7 +62,6 @@ function renderCart() {
         });
 
 }
-
 function renderIntro() {
     const homeItem = document.querySelectorAll(".home_Item");
     let index = 0; 
@@ -85,7 +95,7 @@ function viewCreen() {
 
     })
 }
-function add() {
+function introAction() {
     const intro = document.querySelector(".intro");
 
     const observer = new IntersectionObserver((entries) => {
@@ -101,10 +111,30 @@ function add() {
 
     observer.observe(intro);
 }
+function cartAction() {
+    const cart = document.querySelectorAll(".cart_Item");
+
+    cart.forEach(element => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    element.classList.add("active");
+                }
+                else {
+                    element.classList.remove("active")
+                }
+            });
+        });
+        observer.observe(element);
+        
+    });
+ 
+}
 function start() {
     renderIntro();
     renderCart();
     viewCreen(); 
-    add();
+    introAction();
+    cartAction();
 }
 start();

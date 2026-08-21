@@ -27,7 +27,7 @@ if (!isset($_SESSION["user"])) {
         </div>
     </header>
     <main>
-        <div class="main_Item">
+        <div class="main_Item home_Items">
             <div class="home_Item active">
                 <img src="images\5dd17243-cb36-4ea5-a698-8b399a4ff700.png" alt="">
                 <div class="description">
