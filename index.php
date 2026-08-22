@@ -79,6 +79,7 @@ if (!isset($_SESSION["user"])) {
 
         </div>
         <div class="main_Item cart_Content">
+            <div class="header_Cart">Trang mục hàng hóa</div>
             <div class="cart_Table"></div>
         </div>
         <div class="main_Item contact_Content">

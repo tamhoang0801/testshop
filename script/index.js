@@ -112,29 +112,36 @@ function introAction() {
     observer.observe(intro);
 }
 function cartAction() {
-    const cart = document.querySelectorAll(".cart_Item");
+    const cartItems = document.querySelectorAll(".cart_Item");
 
-    cart.forEach(element => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    element.classList.add("active");
-                }
-                else {
-                    element.classList.remove("active")
-                }
-            });
+    console.log("Số cart_Item:", cartItems.length);
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            console.log(
+                entry.target,
+                entry.isIntersecting
+            );
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            } else {
+                entry.target.classList.remove("active");
+            }
         });
-        observer.observe(element);
-        
     });
- 
+
+    cartItems.forEach(item => {
+        observer.observe(item);
+    });
 }
 function start() {
     renderIntro();
     renderCart();
     viewCreen(); 
     introAction();
-    cartAction();
+    setTimeout(()=>{
+        cartAction();
+    },1000);
 }
 start();
