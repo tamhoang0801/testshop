@@ -45,7 +45,29 @@ header {
 .navbar_Search .fa-magnifying-glass:hover {
     background-color: black;
 }
+.search_Input {
+    display: none;
 
+    text-align: center;
+    width: 300px;
+    background-color: white;
+    height: 400px;
+    border: solid black 2px;
+    border-radius: 20px;
+    position: absolute;
+    right: 400px;
+
+
+}
+.search_Value {
+    text-align: center;
+    width: 80%;
+    
+    border: solid black 2px;
+    height: 30px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
 
 main {
     color: white;
@@ -135,12 +157,12 @@ main {
     display: flex ;
     text-align: start;
     border-radius: 30px;
-    background-color: rgb(39, 40, 40);
+    background-color: rgba(38, 38, 38, 0.1);
     margin: 10px;
     padding: 20px;
     width: 60%;
     border: 1px solid black;
-    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.5);
+    box-shadow: 3px 3px 5px 3px rgba(113, 113, 113, 0.5);
     cursor: pointer;
 }
 /* .cart_Item:hover {

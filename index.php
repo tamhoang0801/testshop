@@ -23,7 +23,12 @@ if (!isset($_SESSION["user"])) {
             <div class="navbar_item">Contact</div>
         </div>
         <div class="navbar_Search">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass">
+
+            </i>
+            <div class="search_Input">
+                <input type="text" name="search" class="search_Value" placeholder="nhập tên sản phẩm bạn muốn tìm kiếm.....">
+            </div>
         </div>
     </header>
     <main>
@@ -79,7 +84,7 @@ if (!isset($_SESSION["user"])) {
 
         </div>
         <div class="main_Item cart_Content">
-            <div class="header_Cart">Trang mục hàng hóa</div>
+            <div class="header_Cart">Danh mục hàng hóa</div>
             <div class="cart_Table"></div>
         </div>
         <div class="main_Item contact_Content">
@@ -129,8 +134,6 @@ if (!isset($_SESSION["user"])) {
                 </div>
             </div>
         </div>
-
-        
     </main>
     <script src="/script/index.js"></script>
 </body>
