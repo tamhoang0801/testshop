@@ -113,16 +113,8 @@ function introAction() {
 }
 function cartAction() {
     const cartItems = document.querySelectorAll(".cart_Item");
-
-    console.log("Số cart_Item:", cartItems.length);
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            console.log(
-                entry.target,
-                entry.isIntersecting
-            );
-
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
             } else {
@@ -130,10 +122,24 @@ function cartAction() {
             }
         });
     });
-
     cartItems.forEach(item => {
         observer.observe(item);
     });
+}
+function clickItem() {
+    const overlay  = document.querySelector('.overlay');
+    const inputSearch = document.querySelector(".search_Input");
+    const inputIcon = document.querySelector(".fa-magnifying-glass");
+    inputIcon.addEventListener("click", ()=>{
+        inputSearch.classList.add("active");
+        overlay.style.display= 'block';
+        
+    });
+    overlay.addEventListener("click",()=>{
+        inputSearch.classList.remove('active');
+        overlay.style.display = "none";
+    });
+
 }
 function start() {
     renderIntro();
@@ -143,5 +149,6 @@ function start() {
     setTimeout(()=>{
         cartAction();
     },1000);
+    clickItem();
 }
 start();

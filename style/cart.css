@@ -1,0 +1,106 @@
+
+main {
+    
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+.narbav {
+    position: fixed;
+    width: 13%;
+    background-color: rgb(35, 35, 35);
+    color: white;
+    border-radius: 10px 0 0 10px ;
+    padding: 10px;
+    height: 100vh;
+}
+.click_Cart {
+    
+    position: absolute;
+    bottom: 5%;
+    font-size: 25px;
+    border: solid black 1px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 5px;
+    z-index: 1;
+    cursor: pointer;
+    color: #111;
+    font-weight: bold;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 14.5%;
+    width: 87%;
+    background-color: white;
+    
+}
+.header {
+    background-color: rgb(193, 192, 192);
+    height: 7%;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 20px 10px 10px;
+    position: fixed;
+    width: 87%;
+}
+.footer {
+    display: flex;
+    background-color: rgb(193, 192, 192);
+    height: 7%;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 20px 10px 10px;
+    position: fixed;
+    width: 87%;
+    bottom: 0;
+    justify-content: space-between;
+
+}
+.submit {
+    margin-right: 50px;
+    padding: 10px 15px;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(218, 215, 215);
+    border-radius: 30px;
+}
+.submit:hover {
+    background-color: #111;
+    color:white;
+}
+table {
+    border: solid black 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-top: 80px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.cart_Table th {
+    background: #111;
+    color: white;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cart_Table td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart_Table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.cart_Table tbody tr:hover {
+    transform: scale(1.01);
+    background: #f8f8f8;
+}

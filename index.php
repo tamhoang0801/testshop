@@ -15,6 +15,7 @@ if (!isset($_SESSION["user"])) {
     <title>My Shop</title>
 </head>
 <body>
+    <div class="overlay"></div>
     <header>
         <div class="navbar">
             <div class="navbar_item active">Home</div>
@@ -23,11 +24,15 @@ if (!isset($_SESSION["user"])) {
             <div class="navbar_item">Contact</div>
         </div>
         <div class="navbar_Search">
-            <i class="fa-solid fa-magnifying-glass">
+            <i class="fa-solid fa-magnifying-glass" tabindex="0">
 
             </i>
             <div class="search_Input">
+                
                 <input type="text" name="search" class="search_Value" placeholder="nhập tên sản phẩm bạn muốn tìm kiếm.....">
+                <div class="suggest_Search">
+                    
+                </div>
             </div>
         </div>
     </header>

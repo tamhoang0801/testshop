@@ -26,34 +26,47 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="/style/cart.css">
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <td>ID</td>
-                <td>NAME</td>
-                <td>PRICE</td>
-                <td>QUANTITY</td>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($cart->getItem() as $item):?>
-            <tr>
-                <td> <?= $item->getId() ?> </td>
-                <td> <?= $item->getName() ?> </td>
-                <td> <?= $item->getPrice() ?> </td>
-                <td> <?= $item->getQuantity() ?></td>
-            </tr>
-            <?php endforeach;?>
-        </tbody>
-    </table>
-    <div>Total:<?= $cart->total()?></div>
-    <form action="/model/order.php" method="POST">
-        <button type="submit">Order</button>
-    </form>
-    <a href="/index.php">continue cart</a>
+    <main>
+        <div class="narbav">
+            <div class="click_Cart" onclick="location.href='/index.php'"> < Back cart</div>
+        </div>
+        <div class="content">
+            <div class="header">
+                My cart
+            </div>
+            <table class="cart_Table">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>NAME</td>
+                        <td>PRICE</td>
+                        <td>QUANTITY</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($cart->getItem() as $item):?>
+                    <tr>
+                        <td> <?= $item->getId() ?> </td>
+                        <td> <?= $item->getName() ?> </td>
+                        <td> <?= $item->getPrice() ?> </td>
+                        <td> <?= $item->getQuantity() ?></td>
+                    </tr>
+                    <?php endforeach;?>
+                </tbody>
+            </table>
+            <div class="footer">
+                <div>Total:<?= $cart->total()?></div>
+                <form action="/model/order.php" method="POST">
+                    <button type="submit" class="submit">Order</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    
 </body>
 </html>

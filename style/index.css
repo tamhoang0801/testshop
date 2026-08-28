@@ -1,6 +1,19 @@
 body {
     margin:  0;
 }
+.overlay {
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    display: none;
+    transition: 0.3s ease;
+}
 header {
     height: 45px;
     background-color: rgb(49, 48, 48) ;
@@ -10,7 +23,7 @@ header {
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     top: 0;
 }
 .navbar {
@@ -47,7 +60,7 @@ header {
 }
 .search_Input {
     display: none;
-
+    z-index: 11 ;
     text-align: center;
     width: 300px;
     background-color: white;
@@ -59,8 +72,12 @@ header {
 
 
 }
+.search_Input.active {
+    display: block;
+}
+
 .search_Value {
-    text-align: center;
+    text-align: start;
     width: 80%;
     
     border: solid black 2px;
@@ -68,7 +85,6 @@ header {
     border-radius: 30px;
     margin-top: 10px;
 }
-
 main {
     color: white;
     background-color: #0F1115;
